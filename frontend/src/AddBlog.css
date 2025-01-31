@@ -1,0 +1,100 @@
+
+/* AddBlog.css */
+html, body {
+  background: #77a5d5; /* Even lighter blue gradient */
+ /* Apply background gradient */
+}
+
+.add-post-container {
+  background: #77a5d5;/* Even lighter blue gradient */
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden; /* Add this */
+  }
+  
+  .add-post-form-container {
+  max-width: 400px;
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin: auto;
+  }
+  
+  body {
+  overflow-x: hidden; /* Add this */
+  }
+  
+
+.add-post-form {
+display: flex;
+flex-direction: column;
+gap: 15px;
+}
+
+.add-post-form input,
+.add-post-form textarea {
+padding: 12px;
+font-size: 16px;
+border: 1px solid #ddd;
+border-radius: 6px;
+outline: none;
+transition: border-color 0.3s ease;
+}
+
+.add-post-form input:focus,
+.add-post-form textarea:focus {
+border-color: #007bff;
+}
+
+.add-post-form input[type="file"] {
+padding: 8px;
+}
+
+.add-post-form textarea {
+resize: vertical;
+min-height: 150px;
+}
+
+.submit-btn {
+background-color: #007bff;
+color: white;
+font-size: 16px;
+padding: 12px;
+border: none;
+border-radius: 6px;
+cursor: pointer;
+transition: background-color 0.3s ease;
+}
+
+.submit-btn:hover {
+background-color: #0056b3;
+}
+
+.submit-btn:active {
+background-color: #004080;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+.add-post-form-container {
+width: 90%;
+margin-left: auto;
+margin-right: auto;
+}
+}
+
+@media screen and (max-width: 480px) {
+.add-post-form-container {
+width: 95%;
+margin-left: auto;
+margin-right: auto;
+}
+}
+

@@ -1,0 +1,54 @@
+ /* Welcome Section */
+ .welcome-section {
+  text-align: center;
+  background: linear-gradient(#77a5d5, #0a67c5, #77a5d5); /* Navy blue gradient */
+  height: 100vh; /* Full height of the viewport */
+  width: 100vw; /* Full width of the viewport */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Vertically center */
+  align-items: center; /* Horizontally center */
+ 
+}
+
+.welcome-section h1 {
+  font-size: 38px;
+  color: #ffffff; /* White for contrast against navy blue */
+  margin-bottom: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  border-bottom: 3px solid #ffffff; /* White for a clean look */
+  padding-bottom: 10px;
+  display: inline-block;
+}
+
+.welcome-section p {
+  font-size: 20px;
+  color: #dcdcdc; /* Light grey text for readability */
+  max-width: 650px;
+  margin: 0 auto;
+  line-height: 1.7;
+  font-weight: 500;
+  letter-spacing: 0.8px;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  font-style: italic;
+}
+
+
+/* Add a subtle fade-in animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.welcome-section h1, .welcome-section p {
+  animation: fadeIn 1s ease-in-out;
+}

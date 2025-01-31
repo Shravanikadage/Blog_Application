@@ -1,0 +1,45 @@
+/* src/components/Navbar.css */
+.navbar {
+  background-color: #3e3e3e;
+  padding: 25px 40px; /* Increased padding for more height */
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  display: flex;
+  justify-content: center; /* Center the navbar content */
+  align-items: center; /* Vertically center the content */
+}
+
+.navbar-list {
+  list-style-type: none;
+  display: flex;
+  justify-content: center; /* Center the list items in the navbar */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-item {
+  margin-right: 40px; /* Increased margin between items */
+}
+
+.navbar-link {
+  color: white;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: 600; /* Make links slightly bolder for better visibility */
+}
+
+.navbar-link:hover {
+  color: #ddd;
+}
+
+/* Add some space at the top of the page for content to avoid overlapping */
+body {
+  background-color: #bab6b6;
+  margin-top: 80px; /* Adjusted for increased navbar height */
+}
+
+
+

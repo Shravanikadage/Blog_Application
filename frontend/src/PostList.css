@@ -1,0 +1,330 @@
+
+/* src/components/PostList.css */
+.search-bar-container {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  position: absolute; /* Keeps it at the top but allows scrolling */
+  top: 80px; /* Adjusted to appear below the navigation bar */
+  left: 0;
+  width: 100%;
+  background-color: transparent; /* Semi-transparent background */
+  backdrop-filter: blur(5px); /* Adds a subtle blur effect */
+  z-index: 999; /* Ensures it appears above other elements */
+}
+
+.search-bar {
+  width: 25%;
+  padding: 10px;
+  font-size: 18px;
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Semi-transparent border */
+  border-radius: 5px;
+  background-color: white; /* Fully transparent background */
+  color: rgb(135, 135, 135); /* Ensures text is visible */
+}
+
+.search-bar::placeholder {
+  color: rgba(75, 75, 75, 0.7); /* Makes the placeholder text visible */
+}
+
+
+.post-list-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  padding: 150px 0 50px; /* Increased padding */
+  }
+  
+
+.post-list {
+  width: 100%;
+  max-width: 1200px;
+  display: grid;
+  grid-template-columns: repeat(4, 2fr);
+  gap: 20px;
+  padding: 0 200px;
+}
+
+.post-card {
+  background-color: #f9f9f9;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.post-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.post-card h3 {
+  margin-bottom: 10px;
+}
+
+.post-description {
+  height: 100px;
+  overflow: hidden;
+  transition: height 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.read-more-link {
+  display: block;
+  margin-top: 10px;
+  color: #007bff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.read-more-link:hover {
+  text-decoration: underline;
+}
+
+
+/* Modal Styles */
+
+.modal-overlay {
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(0, 0, 0, 0.5);
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+.modal-content {
+background-color: #fff;
+padding: 20px;
+border-radius: 8px;
+width: 800px;
+max-height: 90%;
+box-sizing: border-box;
+position: relative;
+overflow: hidden;
+display: flex;
+flex-direction: column;
+justify-content: flex-start;
+align-items: center;
+}
+
+
+
+.modal-image {
+width: 100%;
+height: auto;
+max-height: 300px;
+object-fit: contain;
+border-radius: 4px;
+margin-bottom: 15px;
+}
+
+.modal-title {
+font-size: 24px;
+margin-bottom: 15px;
+text-align: center;
+}
+
+.modal-description {
+font-size: 16px;
+line-height: 1.5;
+max-height: none;
+word-wrap: break-word;
+margin-bottom: 15px;
+}
+
+.show-less-link {
+display: inline-block;
+margin-top: 15px;
+color: #007bff;
+text-decoration: none;
+font-size: 14px;
+cursor: pointer;
+text-align: left;
+width: 100%;
+}
+
+.show-less-link:hover {
+text-decoration: underline;
+}
+
+.post-actions {
+margin-top: 10px;
+display: flex;
+gap: 10px;
+}
+
+.update-btn, .delete-btn {
+padding: 5px 10px;
+font-size: 14px;
+cursor: pointer;
+border: none;
+border-radius: 5px;
+transition: background-color 0.3s;
+}
+
+.update-btn {
+background-color: #007bff;
+color: white;
+}
+
+.update-btn:hover {
+background-color: #0056b3;
+}
+
+.delete-btn {
+background-color: #ff4d4d;
+color: white;
+}
+
+.delete-btn:hover {
+background-color: #e60000;
+}
+
+
+
+.pagination {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  padding: 20px; 
+  margin-top: auto;
+  position: relative;
+  margin-bottom: 50px; 
+  }
+  
+
+.pagination button {
+padding: 10px 15px;
+border: none;
+border-radius: 5px;
+cursor: pointer;
+margin: 0 5px;
+background-color: #007bff;
+color: white;
+transition: background-color 0.3s;
+margin-top: 30px;  
+}
+
+.pagination button:hover {
+background-color: #0056b3;
+}
+
+.pagination button.active {
+background-color: #004884;
+}
+
+
+
+
+/* For large screens like desktops */
+@media (max-width: 1200px) {
+  .post-list {
+    grid-template-columns: repeat(3, 1fr); /* Adjust grid to 3 columns */
+    padding: 0 50px; /* Reduced padding for medium screens */
+  }
+
+  .search-bar {
+    width: 35%; /* Slightly larger width for the search bar */
+  }
+}
+
+/* For tablets and medium screens */
+@media (max-width: 992px) {
+  .post-list {
+    grid-template-columns: repeat(2, 1fr); /* Adjust grid to 2 columns */
+    padding: 0 20px; /* Reduced padding */
+  }
+
+  .search-bar {
+    width: 50%; /* Search bar occupies more space */
+  }
+
+  .modal-content {
+    width: 90%; /* More responsive modal width */
+  }
+}
+
+/* For smaller tablets and mobile devices */
+@media (max-width: 768px) {
+  .post-list {
+    grid-template-columns: 1fr; /* Single column layout for mobile */
+    padding: 0 10px; /* Reduced padding */
+  }
+
+  .post-card {
+    height: auto; /* Allow post cards to adjust their height */
+  }
+
+  .modal-content {
+    width: 90%; /* Modal width adjusted for smaller screens */
+    max-height: 80vh;
+    overflow-y: auto;
+  }
+
+  .search-bar {
+    width: 70%; /* Search bar width adjustment */
+  }
+}
+
+/* For very small devices like phones */
+@media (max-width: 480px) {
+  .post-list {
+    padding: 0 10px; /* Padding adjustment for small devices */
+  }
+
+  .post-card {
+    padding: 10px; /* Reduced padding for small screens */
+  }
+
+  .modal-title {
+    font-size: 20px; /* Reduced modal title size */
+  }
+
+  .modal-description {
+    font-size: 14px; /* Reduced font size for descriptions */
+  }
+
+  .search-bar {
+    width: 70%; /* Larger search bar on small screens */
+    font-size: 14px; /* Slightly smaller font size */
+  }
+
+  .pagination {
+    padding: 10px; /* Adjust padding for pagination */
+  }
+}
+
+/* Further fine-tuning for very small screens (below 360px) */
+@media (max-width: 360px) {
+  .search-bar {
+    width: 80%; /* Search bar width adjusted for very small screens */
+    font-size: 12px; /* Smaller font size for very small screens */
+  }
+
+  .post-list {
+    padding: 0 5px; /* Padding adjustments */
+  }
+
+  .post-card {
+    padding: 8px; /* Slightly smaller padding */
+  }
+
+  .modal-title {
+    font-size: 18px; /* Even smaller font size */
+  }
+
+  .modal-description {
+    font-size: 12px; /* Small font for very small screens */
+  }
+}
