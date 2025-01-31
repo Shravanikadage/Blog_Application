@@ -22,14 +22,8 @@ mongoose.connect(mongoURI, {
 .catch((err) => console.error("Failed to connect to MongoDB", err));
 
 // Middleware
-// app.use(cors());
-app.use(cors(
-  {
-      origin: ["http://localhost:5000"],
-      methods: ["POST","GET"],
-      credentials: true
-  }
-));
+ app.use(cors());
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
