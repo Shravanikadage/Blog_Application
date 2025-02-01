@@ -8,7 +8,8 @@ const cors = require('cors');
 require('dotenv').config();
 
 const app = express();
-const PORT = process.env.PORT || 5000;
+const PORT = 5000;
+
 
 // MongoDB Atlas connection URI
 const mongoURI = process.env.MONGO_URI;
