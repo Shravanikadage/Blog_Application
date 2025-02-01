@@ -31,9 +31,14 @@ app.use(express.urlencoded({ extended: true }));
 app.use('/uploads', express.static('uploads'));
 
 // Root Route
+app.get('/favicon.ico', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'favicon.ico'));
+});
+
 app.get('/', (req, res) => {
   res.send('Welcome to Server');
 });
+
 
 // Multer setup for image uploading
 const storage = multer.diskStorage({
